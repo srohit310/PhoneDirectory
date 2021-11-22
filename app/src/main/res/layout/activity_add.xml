@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddActivity.AddActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp">
+
+            <LinearLayout
+                android:id="@+id/TitleLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/upbutton"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="55dp"
+                    android:background="@drawable/ic_baseline_arrow_back_24" />
+
+                <TextView
+                    android:id="@+id/MainTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginBottom="40dp"
+                    android:paddingLeft="30dp"
+                    android:text="Add Contact"
+                    android:textColor="@color/black"
+                    android:textSize="35sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/MainDetailsCard"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/buttonPanel"
+                android:layout_below="@+id/TitleLayout"
+                android:layout_margin="5dp"
+                android:elevation="8dp"
+                android:backgroundTint="@color/white"
+                app:cardCornerRadius="20dp"
+                app:contentPadding="15dp">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="30dp"
+                        android:animateLayoutChanges="true"
+                        android:imeOptions="flagNoExtractUi"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/fullNameTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/ic_baseline_account_circle_24"
+                            android:drawablePadding="15dp"
+                            android:padding="10dp"
+                            android:text="Name"
+                            android:textColor="@color/black" />
+
+                        <LinearLayout
+                            android:id="@+id/NameLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <EditText
+                                android:id="@+id/firstName"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="40dp"
+                                android:hint="Enter First Name"
+                                android:inputType="textCapSentences"
+                                android:padding="15dp"
+                                android:textSize="12sp" />
+
+                            <EditText
+                                android:id="@+id/lastName"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="40dp"
+                                android:hint="Enter Last Name"
+                                android:inputType="textCapSentences"
+                                android:padding="15dp"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/PhoneTextView"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="7"
+                                android:drawableLeft="@drawable/ic_baseline_local_phone_24"
+                                android:drawablePadding="15dp"
+                                android:padding="10dp"
+                                android:text="Phone"
+                                android:textColor="@color/black" />
+
+                            <ImageButton
+                                android:id="@+id/addphonenumberButton"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:backgroundTint="@color/white"
+                                android:elevation="0dp"
+                                android:src="@drawable/ic_baseline_add_green_24" />
+                        </LinearLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/PhoneNumberList"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:nestedScrollingEnabled="false"
+                            android:padding="10dp" />
+
+                        <TextView
+                            android:id="@+id/EmailTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/ic_baseline_email_24"
+                            android:drawablePadding="15dp"
+                            android:padding="10dp"
+                            android:text="Email"
+                            android:textColor="@color/black" />
+
+                        <EditText
+                            android:id="@+id/EmailEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="40dp"
+                            android:hint="Enter Email"
+                            android:inputType="textEmailAddress"
+                            android:padding="15dp"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/AddressTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:drawableLeft="@drawable/ic_baseline_house_24"
+                            android:drawablePadding="15dp"
+                            android:padding="10dp"
+                            android:text="Address"
+                            android:textColor="@color/black" />
+
+                        <LinearLayout
+                            android:id="@+id/AddressLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <EditText
+                                android:id="@+id/street"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="40dp"
+                                android:hint="Enter Street"
+                                android:inputType="textCapSentences"
+                                android:padding="15dp"
+                                android:textSize="12sp" />
+
+                            <EditText
+                                android:id="@+id/city"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="40dp"
+                                android:hint="Enter City"
+                                android:inputType="textCapSentences"
+                                android:padding="15dp"
+                                android:textSize="12sp" />
+
+                            <EditText
+                                android:id="@+id/state"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="40dp"
+                                android:hint="Enter state"
+                                android:inputType="textCapSentences"
+                                android:padding="15dp"
+                                android:textSize="12sp" />
+
+                            <EditText
+                                android:id="@+id/country"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="40dp"
+                                android:hint="Enter Country"
+                                android:inputType="textCapSentences"
+                                android:padding="15dp"
+                                android:textSize="12sp" />
+
+                            <EditText
+                                android:id="@+id/zipcode"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="40dp"
+                                android:hint="Enter Pin/Zipcode"
+                                android:inputType="number"
+                                android:padding="15dp"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/NotesTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:drawableLeft="@drawable/ic_baseline_note_add_24"
+                            android:drawablePadding="15dp"
+                            android:padding="10dp"
+                            android:text="Additional Details"
+                            android:textColor="@color/black" />
+
+                        <EditText
+                            android:id="@+id/NotesEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:layout_marginHorizontal="10dp"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/curved_accend_border"
+                            android:gravity="top"
+                            android:inputType="textMultiLine"
+                            android:padding="15dp"
+                            android:textSize="12sp" />
+
+
+                    </LinearLayout>
+                </ScrollView>
+            </androidx.cardview.widget.CardView>
+
+
+            <LinearLayout
+                android:id="@+id/buttonPanel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:orientation="horizontal"
+                android:padding="15dp">
+
+                <Button
+                    android:id="@+id/AddUserButton"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/lightblue_button"
+                    android:text="Add"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/CancelAddUserButton"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/lightblue_button"
+                    android:text="Cancel"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

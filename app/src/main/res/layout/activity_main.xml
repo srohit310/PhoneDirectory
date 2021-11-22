@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.simplecityapps.recyclerview_fastscroll.views.FastScrollRecyclerView
+        android:id="@+id/ContactsList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/NameSearch"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginBottom="10dp"
+        app:fastScrollPopupBgColor="@color/black"
+        app:fastScrollPopupTextColor="@android:color/primary_text_dark"
+        app:fastScrollThumbColor="@color/black" />
+
+    <RelativeLayout
+        android:id="@+id/EmptyView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/emptyImage"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:alpha="0.5"
+            android:src="@drawable/ic_baseline_person_add_24" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/emptyImage"
+            android:gravity="center"
+            android:text="Tap the add button to add Contacts" />
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/NameSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:background="@drawable/textinputedittext"
+        android:backgroundTint="@null"
+        android:drawableEnd="@drawable/ic_baseline_search_24"
+        android:hint="@string/search"
+        android:padding="10dp"
+        android:popupBackground="@drawable/rectangular_border"
+        android:textSize="13sp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAdd"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"
+        android:backgroundTint="@color/black"
+        app:borderWidth="0dp"
+        android:src="@drawable/ic_baseline_add_24"
+        app:layout_constraintDimensionRatio="1:1"
+        app:tint="@color/white" />
+</RelativeLayout>
